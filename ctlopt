@@ -1,0 +1,12 @@
+**free
+/IF DEFINED(CTLOPT)
+   /EOF
+/ENDIF
+/DEFINE(CTLOPT)
+
+    ctl-opt  bnddir('QC2LE');
+    ctl-opt  debug option(*srcstmt : *nodebugio);
+    ctl-opt  extbinint(*YES);
+    ctl-opt  bnddir('SRVAUTL');
+    ctl-opt  dftactgrp(*no) actgrp(*caller);
+ 
