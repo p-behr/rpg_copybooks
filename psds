@@ -1,0 +1,48 @@
+**free
+
+/IF DEFINED(PSDS)
+    /EOF
+/ENDIF
+/DEFINE PSDS
+
+    dcl-ds PSDS PSDS qualified;
+        pgmName               *proc;                // pos(1)   char(10)
+        statusCode            *status;              // pos(11)  zoned(5)
+        prevStatus            zoned(5)   pos(16);
+        stmtNumber            char(8)    pos(21);
+        rpgRoutine            *routine;             // pos(29)  char(8)
+        parms                 *parms;               // pos(37)  zoned(3)
+        exceptionType         char(3)    pos(40);
+        exceptionNumber       char(4)    pos(43);
+        exception             char(7)    pos(40);
+        *n                    char(4)    pos(47);   // reserved
+        *n                    char(30)   pos(51);   // work area for messages
+        programLibray         char(10)   pos(81);
+        exceptionData         char(80)   pos(91);
+        rnx9001Exception      char(4)    pos(171);
+        lastFile              char(10)   pos(175);
+        *n                    char(6)    pos(185);  // unused
+        jobStartDate          char(8)    pos(191);
+        jobStartCentry        zoned(2)   pos(199);
+        lastFile8             char(8)    pos(201);
+        lastFileStatus        char(35)   pos(209);
+        jobName               char(10)   pos(244);
+        jobUser               char(10)   pos(254);
+        jobNumber             zoned(6)   pos(264);
+        jobDate               zoned(6)   pos(270);
+        runDate               zoned(6)   pos(276);
+        runTime               zoned(6)   pos(282);  // hhmmss
+        pgmCreateDate         char(6)    pos(288);
+        pgmCreateTime         char(6)    pos(294);
+        compilerLevel         char(4)    pos(300);
+        srcFile               char(10)   pos(304);
+        srcLib                char(10)   pos(314);
+        srcMbr                char(10)   pos(324);
+        procPgm               char(10)   pos(334);
+        procModule            char(10)   pos(344);
+        currentUser           char(10)   pos(358);
+        externalError         int(10)    pos(368);
+        intoElements          int(20)    pos(372);
+        internalJobId         char(16)   pos(380);
+        systemName            char(8)    pos(396);
+    end-ds;       
